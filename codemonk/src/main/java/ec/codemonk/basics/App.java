@@ -1,4 +1,4 @@
-package ec.codemonk.basicsOfInputOutput;
+package ec.codemonk.basics;
 
 /**
  * Hello world!
