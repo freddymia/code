@@ -29,11 +29,14 @@ public class PlayWithNumbers {
 
 		for (int i = 0; i < q; i++) {
 			values[i] = getValueFloor(items, br.readLine());
+			System.out.println(values[i]);
 		}
 
+		/**
 		for (int i = 0; i < q; i++) {
 			System.out.println(values[i]);
 		}
+		**/
 		
 	}
 
