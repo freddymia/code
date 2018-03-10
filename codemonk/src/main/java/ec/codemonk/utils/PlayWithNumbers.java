@@ -1,4 +1,4 @@
-package ec.codemonk.basics;
+package ec.codemonk.utils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
  * @author finga
  *
  */
-public class PlayWithNumbersV2 {
+public class PlayWithNumbers {
 
 	/**
 	 * You are given an array of n numbers and q queries. For each query you have to
