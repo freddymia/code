@@ -2,6 +2,8 @@ package ec.codemonk.basics;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Cipher {
 
@@ -12,25 +14,30 @@ public class Cipher {
 		String message = br.readLine();
 		String k = br.readLine();
 
-		String messageAlphaNumeric = message.replaceAll("[^a-zA-Z0-9]", "");
-		
-		
-		
-		
+		// String messageAlphaNumeric = message.replaceAll("[^a-zA-Z0-9]", "");
 
-		while (messageAlphaNumeric.length() > 0) {
+		// V2
+		Map<String, String> memory = new HashMap<String, String>();
 
-			//System.out.print(messageAlphaNumeric.charAt(0));
-			int ascii = process(messageAlphaNumeric.charAt(0), Integer.parseInt(k));
-			
-			char ascciValue = (char) ascii;
-			System.out.print(ascciValue+ "\n");
-			
-			message = message.replaceAll(String.valueOf(messageAlphaNumeric.charAt(0)), String.valueOf(ascciValue));
-			messageAlphaNumeric = messageAlphaNumeric.replaceAll(String.valueOf(messageAlphaNumeric.charAt(0)), "");
+		for (int i = 0; i < message.length(); i++) {
+
+			char ascciValue = 0;
+
+			if (memory.containsKey(String.valueOf(message.charAt(i)))) {
+
+				ascciValue = memory.get(String.valueOf(message.charAt(i))).charAt(0);
+
+			} else {
+
+				int ascii = process(message.charAt(i), Integer.parseInt(k));
+				
+				ascciValue = (char) ascii;
+
+				memory.put(String.valueOf(message.charAt(i)), String.valueOf(ascciValue));
+			}
+
+			System.out.print(ascciValue);
 		}
-
-		System.out.println(message);
 
 	}
 
@@ -46,6 +53,8 @@ public class Cipher {
 			value = validate(64, 90, ascii, k);
 		} else if (ascii >= 97 && ascii <= 122) {// [a-z]
 			value = validate(96, 122, ascii, k);
+		} else {
+			value = ascii;
 		}
 
 		return value;
