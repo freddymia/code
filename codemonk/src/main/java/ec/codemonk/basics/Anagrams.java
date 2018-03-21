@@ -15,31 +15,26 @@ public class Anagrams {
 
 			String strA = br.readLine();
 			String strB = br.readLine();
-			
-			System.out.println(compare(strA, strB));
 
+			System.out.println(compare(strA, strB));
 		}
 
 	}
 
-	static int compare(String A, String B) {
-		
-		
-		
-		
-		return 0;
+	static int compare(String strA, String strB) {
+
+		char[] csA = strA.toCharArray();
+
+		int strALength = csA.length;
+
+		for (int i = 0; i < csA.length; i++) {
+			if (strB.contains(String.valueOf(csA[i]))) {
+				strB = strB.replaceFirst(String.valueOf(csA[i]), "");
+				strALength--;
+			}
+		}
+
+		return (strALength + strB.length());
 	}
-	
-	
-	
-	
-	/**
-	 * for (int i = 0; i < strA.length(); i++) {
-	 * 
-	 * CharSequence cs = String.valueOf(strA.charAt(i));
-	 * 
-	 * if (!strB.contains(cs)) { characterDelete++; strA=
-	 * strA.replaceFirst(String.valueOf(strA.charAt(i)), ""); } }
-	 */
 
 }
