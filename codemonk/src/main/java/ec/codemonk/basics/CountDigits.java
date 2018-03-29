@@ -1,8 +1,8 @@
 package ec.codemonk.basics;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CountDigits {
 
@@ -11,16 +11,27 @@ public class CountDigits {
         Scanner s = new Scanner(System.in);
 
         String srt = s.next();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
         int i = 0;
-        while (i++ < 10) {
-            
-            Pattern pattern = Pattern.compile(String.valueOf(i));
-            Matcher matcher = pattern.matcher(srt);
-            
-           // Map<String, Long> ocurrencias = list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-            String
-            
+        while (i++ < srt.length()) {
+            Integer intVal = Integer.parseInt(String.valueOf(srt.charAt(i-1)));
+            if (map.containsKey(intVal)) {
+                map.put(intVal, map.get(intVal) + 1);
+            }else {
+                map.put(intVal, 1);
+            }
+        }
+
+        for (int j = 0; j < 10; j++) {
+
+            Integer oc = 0;
+
+            if (map.containsKey(j)) {
+                oc = map.get(j);
+            }
+
+            System.out.println(j + " " + oc);
 
         }
 
