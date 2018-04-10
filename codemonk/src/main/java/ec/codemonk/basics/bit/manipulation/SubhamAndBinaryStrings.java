@@ -28,8 +28,5 @@ public class SubhamAndBinaryStrings {
         }
     }
     
-    static validateDecimal(String binari) {
-        
-    }
 
 }
