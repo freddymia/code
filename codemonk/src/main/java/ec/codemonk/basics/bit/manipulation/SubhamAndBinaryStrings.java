@@ -27,6 +27,5 @@ public class SubhamAndBinaryStrings {
             System.out.println(sn);
         }
     }
-    
 
 }
