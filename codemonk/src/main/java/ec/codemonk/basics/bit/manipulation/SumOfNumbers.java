@@ -1,33 +1,46 @@
 package ec.codemonk.basics.bit.manipulation;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.Scanner;
 
 public class SumOfNumbers {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Scanner sc = new Scanner(System.in);
 
-        int T = Integer.parseInt(br.readLine());
+		int t = sc.nextInt();
 
-        while (T-- > 0) {
-            int n = Integer.parseInt(br.readLine());
-            String [n] strA = br.readLine().split("\\s");
-            int s = Integer.parseInt(br.readLine());
+		while (t-- > 0) {
 
-            operator(new ArrayList<String>(strA), s);
-        }
+			int n = sc.nextInt();
 
-    }
+			int i = 0;
+			int[] items = new int[n];
 
-    private static void operator(List<String> list, int S) {
+			while (i < n) {
+				items[i] = sc.nextInt();
+				i++;
+			}
 
-        TreeSet<String> ts = new TreeSet<String>(list).descendingSet();
+			int s = sc.nextInt();
 
-    }
+			deepSearch(items, s);
+
+		}
+
+		sc.close();
+	}
+
+	private static void deepSearch(int[] items, int s) {
+
+		int i = items[0];
+		int r = s - i;
+
+	}
+
+	private static int[] filterRange(int[] items, int s) {
+		
+		return items;
+	}
 
 }
