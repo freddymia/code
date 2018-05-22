@@ -2,7 +2,7 @@ package ec.codemonk.basics.bit.manipulation;
 
 import java.util.Scanner;
 
-public class SumOfNumbers {
+public class SumOfNumbersV1 {
 
 	public static void main(String[] args) throws Exception {
 
